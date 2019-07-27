@@ -1,0 +1,38 @@
+{{>nav_bar_member}}
+
+<form class="form--inpage" action="create-goal" method="post">
+  <div class="alert--wide">
+    Please fill out a title<br />
+    Please add an image.
+  </div>
+  <div class="input-group input-group--horizontal">
+    <label class="input-group__label" for="goal-title"> Title</label>
+    <input id="goal-title" class="input-group__field" type="text" name="goal-title" placeholder="E.g. ride a camel" />
+  </div>
+
+  <div class="input-group input-group--horizontal">
+    <label class="input-group__label" for="goal-image"> Image</label>
+    <input id="goal-image" class="input-group__field" type="file" name="goal-image" />
+  </div>
+
+  <div class="input-group input-group--horizontal">
+    <label class="input-group__label" for="goal-tags"> Add tags</label>
+    <input id="goal-tags" class="input-group__field" type="text" name="goal-tags"
+      placeholder="Separate multiple tags with commas" />
+  </div>
+
+  <div class="input-group input-group--horizontal">
+    <label class="input-group__label" for="goal-description"> Description</label>
+    <textarea id="goal-description" class="input-group__field" type="text" name="goal-descrption" rows="8" cols="25">
+    </textarea>
+  </div>
+
+  <div <class="prompt">
+    <a class="prompt__cancel" href="#">Cancel</a>
+    <button class="btn btn--primary prompt__confirm" type="submit">Create Goal</button>
+
+  </div>
+
+</form>
+
+{{footer}}

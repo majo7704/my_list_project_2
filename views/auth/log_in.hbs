@@ -1,0 +1,18 @@
+<form action="/login" method="POST" id="form">
+  <h2>Login</h2>
+
+  <label for="username">Email</label>
+  <input type="text" name="email">
+
+  <label for="password">Password</label>
+  <input type="password" name="password">
+
+  {{#if errorMessage }}
+  <div class="error-message">{{ errorMessage }}</div>
+  {{/if}}
+<div>
+  <input id="tou" type="checkbox" />
+  <label for="tou">Remember me <a href="#">Forgot password?</a> </h4>
+</div>
+  <button>LOG IN</button>
+</form>

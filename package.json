@@ -1,0 +1,36 @@
+{
+  "name": "my_bucket_list_project_2",
+  "version": "1.0.0",
+  "description": "My bucket list  Technologies used: JavaScript, NodeJs/Express Unsolved problems: Approach taken:",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "debug": "nodemon --inspect app.js",
+    "dev": "DEBUG=starter-code:* nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/majo7704/my_bucket_list_project_2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/majo7704/my_bucket_list_project_2/issues"
+  },
+  "homepage": "https://github.com/majo7704/my_bucket_list_project_2#readme",
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "body-parser": "^1.19.0",
+    "connect-mongo": "^3.0.0",
+    "cookie-parser": "^1.4.4",
+    "express": "^4.17.1",
+    "express-session": "^1.16.2",
+    "hbs": "^4.0.4",
+    "instafeed.js": "^1.4.1",
+    "mongoose": "^5.6.7",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.19.1",
+    "path": "^0.12.7"
+  }
+}
