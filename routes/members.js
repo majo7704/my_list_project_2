@@ -4,15 +4,17 @@ const Member = require('../models/Member');
 const bcrypt = require('bcrypt');
 
 //creating routes to access the signup page
-router.get('/signup', (req, res, next) => {
-  res.render('auth/sign_up')
-})
+// router.get('/signup', (req, res, next) => {
+//   res.render('auth/sign_up')
+// })
 
 
 
 
 //creating routes to access the login page
 router.get('/login', (req, res, next) => {
+  debugger
+  console.log(req.url)
   res.render('auth/log_in')
 })
 

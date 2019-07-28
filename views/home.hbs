@@ -1,15 +1,25 @@
-{{>nav_bar_not_member}}
+
+<header class="banner">
+  {{>nav_bar_not_member}}
 <div class="masthead">
   <div class="content-wrapper">
     <h1>Get inspired. Create your bucket list. Share.</h1>
-    <form class="masthead__search input" class="search" action="ideas" method="get">
+    <form class="masthead__search input" class="search" action="/" method="POST">
       <label class="input__label" for="cta-search-input">Inspire me</label>
       <div class="input__row">
         <input class="input__field" id="cta-search-input" name="search" type="text"
           placeholder="e.g. See the northern lights" />
-        <button class="btn" type="submit">Search</button>
+        <button class="btn btn--cta" type="submit">Search</button>
       </div>
     </form>
   </div>
 </div>
-{{> footer}}
+</header>
+<main>
+  <div class="content-wrapper">
+    <h2>Some ideas</h2>
+    <ul id="listContainer" class="bare-list cards">
+
+    </ul>
+  </div>
+</main>

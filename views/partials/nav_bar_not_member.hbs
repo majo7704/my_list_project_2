@@ -1,14 +1,17 @@
-<header>
-  <nav>
+<div class="global-header">
+  <div class="content-wrapper">
     <form action="/members/login" method="POST">
-      <label for="search">My Bucket List</label>
-      <input type="text" name="search" placeholder="E.g. swimming with dolphins">
-      <button>SEARCH</button>
+      <label class="logo" for="search"><em class="footer-logo">My</em>Bucket List</label>
+      <button class="but-icon"><svg class="icon" height="18" viewbox="0 0 24 24" width="18" role="presentation">
+        <use xlink:href="#search"></use>
+      </svg></button>
     </form>
-    <ul class="nav_bar not_member">
-      <li><a href="auth/log_in.hbs">Log in</a></li>
-      <li><a href="/sign_up.hbs">Sign up</a></li>
-      <li><a href="#">Inspiration</a></li>
-    </ul>
-  </nav>
-</header>
+    <nav>
+      <ul class="nav_bar bare-list not_member">
+        <li><a href="/login">Log in</a></li>
+        <li><a href="/signup">Sign up</a></li>
+        <li><a href="#">Inspiration</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
