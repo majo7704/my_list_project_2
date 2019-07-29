@@ -13,7 +13,7 @@ const app = express();
 
 app.get('/', (req, res, next) => {
   console.log(req.url)
-res.render('home')
+res.render('auth/login')
 })
 
 
@@ -49,7 +49,7 @@ app.use(bodyParser.urlencoded ({
   extended: false
 }))
 //app.use('/', require("./routes/inspirations"))
-app.use("/login", require("./routes/members"))
+app.use("/login", require("./routes/auth-routes"))
 
 app.use(cookieParser);
 
