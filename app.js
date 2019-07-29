@@ -4,19 +4,13 @@ const express = require('express');
 const path = require('path');
 const hbs = require('hbs');
 const mongoose = require('mongoose');
+
 //const instaFeed = require('instafeed.js');
 
 const session = require('express-session');
 const MongoStore = require("connect-mongo")(session)
 
 const app = express();
-
-app.get('/', (req, res, next) => {
-  console.log(req.url)
-res.render('auth/login')
-})
-
-
 
 app.use(session({
   secret: 'super secret',
@@ -29,6 +23,7 @@ app.use(session({
   saveUninitialized: true
 }))
 // Connection to database "myBucketList"
+// mongoose.Promise = Promise
 mongoose.connect('mongodb://localhost/myBucketList', {useNewUrlParser: true})
     .then(() => {
     console.log('Connected to Mongo');
@@ -48,14 +43,26 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded ({
   extended: false
 }))
-//app.use('/', require("./routes/inspirations"))
-app.use("/login", require("./routes/auth-routes"))
 
-app.use(cookieParser);
+app.use(cookieParser());
 
+app.use("/", require('./routes/index'));
+app.use("/", require('./routes/auth-routes'));
+app.use("/", require('./routes/search'));
+app.use("/", require('./routes/profile'));
 
+app.use(function(req, res, next) {
+  next({message: "Page not found.", status: 404})
+})
 
-
+app.use(function (err, req, res, next) {
+  // set locals, only providing error in development
+  res.locals.message = err.message;
+  // res.locals.error = req.app.get('env') === 'development' ? err : {};
+  // render the error page
+  res.status(err.status || 500);
+  res.render('errorMessage');
+});
 //const inspirations = require('./routes/inspirations')
 //app.use('/', inspirations)
 
@@ -68,3 +75,5 @@ app.use(cookieParser);
 app.listen(3000, () =>{
   console.log('I am listening on 3000')
 });
+
+// module.exports = app;

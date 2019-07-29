@@ -5,8 +5,8 @@ const userSchema = new Schema({
   username: String,
   password: String
 }, {
-  timestamps: { createdAt: "ceated_at", updatedAt: "updated_at"}
+  timestamps: true
 });
-const User = mongoose.model('User', userSchema)
+const User = mongoose.model('users', userSchema)
 
 module.exports = User;
