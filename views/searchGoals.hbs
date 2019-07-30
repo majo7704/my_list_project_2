@@ -8,7 +8,8 @@
         <div class="input__row">
           <input class="input__field" id="cta-search-input" name="search" type="text"
             placeholder="e.g. See the northern lights" />
-          <button class="btn btn--cta" type="submit">Search</button>
+          <button class="btn btn--cta" type="submit"><svg class="icon" height="18" viewbox="0 0 24 24" width="18" role="presentation">
+            <use xlink:href="#search"></use></button>
         </div>
       </form>
     </div>
@@ -18,7 +19,11 @@
   <div class="content-wrapper">
     <h2>Some ideas</h2>
     <ul id="listContainer" class="bare-list cards">
+      {{#each photos}}
+      {{>goalPartial}}
+      {{/each}}
 
     </ul>
   </div>
+  {{> footer}}
 </main>

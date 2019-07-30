@@ -1,18 +1,20 @@
-<form action="/myGoals" method="POST" >
-  <h2>Login</h2>
 
-  <label for="username">Email</label>
-  <input type="text" name="email">
+  
+<form class="formCard"  action="/myGoals" method="POST">
+<div class="logInForm">
+<h2 class="logH">Log in to <em class="footer-logo">My</em>Bucket List</h2>
+  <label class="input__label" for="email">Email address</label>
+  <input class="input__field" type="text" name="email">
 
-  <label for="password">Password</label>
-  <input type="password" name="password">
+  <label class="input__label" for="password">Password</label>
+  <input class="input__field" type="password" name="password">
 
   {{#if errorMessage }}
   <div class="error-message">{{ errorMessage }}</div>
   {{/if}}
-<div>
-  <input id="tou" type="checkbox" />
-  <label for="tou">Remember me <a href="#">Forgot password?</a> </h4>
+<div clasds="input__row">
+  <label class="input__label" for="tou">Not a member? <a href="/auth/signup">Sign up here</a> </h4>
 </div>
-  <button>LOG IN</button>
+  <button class="btn btn--cta">LOG IN</button>
+  </div>
 </form>
