@@ -311,7 +311,7 @@ nav ul {
 }
 
 /*---------CARDS------------*/
-.card {
+.cards li {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.14);
   margin: 0 2rem 2rem 0;
   border-radius: 3px;
@@ -322,6 +322,11 @@ nav ul {
   font-size: 1rem;
 }
 
+.card img {
+  width: 100%;
+  
+  
+}
 .card__thumb {
   position: relative;
   text-decoration: none;
@@ -364,6 +369,9 @@ nav ul {
 
 .cards {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  
 }
 
 /*-----------------------------

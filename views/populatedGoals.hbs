@@ -1,1 +1,9 @@
+{{>nav_bar_not_member}}
 
+<ul class="cards">
+{{#each photoURLs }}
+  <li class="card"><img src="{{this}}" />
+  <button class="btn btn--cta card__footer">Add goal</button>
+  </li>
+{{/each}}
+</ul>

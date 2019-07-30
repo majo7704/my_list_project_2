@@ -5,7 +5,7 @@ const path = require('path');
 const hbs = require('hbs');
 const mongoose = require('mongoose');
 require('dotenv').config()
-const authenticate = require('./routes/oauth')
+//const authenticate = require('./routes/oauth')
 //require('./apiconfig/flickr');
 
 
@@ -50,9 +50,9 @@ app.use(cookieParser());
 
 app.use("/", require('./routes/index'));
 app.use("/", require('./routes/auth-routes'));
-app.use("/", authenticate, require('./routes/search'));
+app.use("/", require('./routes/search'));
 app.use("/", require('./routes/profile'));
-app.use('/', require('./routes/oauth'))
+
 // app.use('/', require('./apiconfig/flickr'))
 
 
