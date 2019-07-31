@@ -1,1 +1,18 @@
-I am your profile
+{{> nav_bar_not_member}}
+<div class="cards-container">
+  
+{{#if user.goals}}
+<h1>Unfinished goals</h1>
+    {{#each user.goals}}
+       {{> goalPartial this}}  
+    {{/each}}
+{{/if}}
+</div>
+<div class="cards-container">
+{{#if user.completedGoals}}
+<h1>Completed goals</h1>
+  {{#each user.completedGoals}}
+  {{> goalPartial this}}
+  {{/each}}
+{{/if}}
+</div>

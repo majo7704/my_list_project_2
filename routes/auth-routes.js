@@ -9,18 +9,25 @@ router.get("/auth/signup", (req, res, next) => {
   res.render('auth/signup') //render does need a back slash 
 })
 
+  // name: String,
+  //   email: String,
+  //   password: String
+
+
 router.post('/auth/signup', function(req, res, next){
   bcrypt.hash(req.body.password, 10, function(error, hash) {
     if(error) throw new Error("Encryption error");
 
     let newUser = {
-      username: req.body.username,
+      name: req.body.name,
+      email: req.body.email,
       password: hash
     }
 
     User.create(newUser)
     .then((user) => {
-      res.redirect('/auth/login');// remember that redirect needs a back slash
+      req.session.user = user;
+      res.redirect("/myGoals");
     })
     .catch((err) => {
       res.send("error")
@@ -29,14 +36,14 @@ router.post('/auth/signup', function(req, res, next){
 })
 
 //LOGIN
-// router.get('/auth/login', etc)
-// })
+
 router.get('/auth/login', (req, res, next) => {
   console.log(req.url)
   res.render('auth/login')
 })
+
 router.post('/auth/login', function(req, res, next) {
-  User.findOne({username: req.body.username})
+  User.findOne({email: req.body.email})
     .then((user) => {
       if(user) {
         bcrypt.compare(req.body.password, user.password, function(err, match){
@@ -54,6 +61,12 @@ router.post('/auth/login', function(req, res, next) {
       res.send("error")
     })
 });
-
+router.get("/logout", (req, res) =>{
+  req.session.destroy(function (err) {
+    if(err) return next(err)
+    res.redirect('auth/login')
+  });
+  
+})
 
 module.exports = router;

@@ -1,8 +1,10 @@
-<div class="goal-container">
-  <div class='goal-cards'>
-    <a href="/goals/{{this.url}}"></a>
-    <h2>{{}}</h2>
-    <h3>{{}}</h3>
-    <p></p>
-  </div>
-</div>
+
+<ul class="cards">
+<li class="card">
+  <img class="card__thumb" src="//live.staticflickr.com/{{server}}/{{idApi}}_{{secret}}.jpg" />
+  <a href="/removedGoal?id={{_id}}&state={{state}}"><button class="btn btn--warning">Remove</button></a>
+  {{#ifunfinished state}}
+  <a href="/completedGoal?id={{_id}}"><button class="btn btn--warning">Complete</button></a>
+  {{/ifunfinished}}
+</li>
+</ul>

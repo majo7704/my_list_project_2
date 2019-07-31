@@ -3,8 +3,10 @@ const Schema = mongoose.Schema;
 
 const goalSchema = new Schema({
   server: String,
-  id: String,
-  secret: String
+  idApi: String,
+  secret: String,
+  state: String,
+  title: String
 });
 const Goal = mongoose.model('goals', goalSchema)
 

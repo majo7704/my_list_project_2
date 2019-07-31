@@ -1,3 +1,17 @@
+let addGoal = document.getElementsByClassName('add')
+
+
+for(let i = 0; i < addGoal.length; i++) {
+  addGoal[i].addEventListener('click', event => {
+    addGoal[i].removeAttribute('class', add)
+    addGoal[i].addAttribute('class', remove)
+    console.log('button clicked')
+  })
+}
+let removeGoal = document.getElementsByClassName('remove')
+
+
+
 // function create () {
 //   let listContainer = document.getElementById('listContainer');
 //   let listItem = document.createElement('li');
