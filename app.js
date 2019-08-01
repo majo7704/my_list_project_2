@@ -99,8 +99,8 @@ app.use(function (err, req, res, next) {
 
 
 
-app.listen(3000, () =>{
-  console.log('I am listening on 3000')
+app.listen(process.env.PORT, () =>{
+  console.log('I am listening on', process.env.PORT)
 });
 
 // module.exports = app;
