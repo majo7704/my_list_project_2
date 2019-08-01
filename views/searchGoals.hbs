@@ -19,10 +19,20 @@
   <div class="content-wrapper">
     <h2>Some ideas</h2>
     <ul id="listContainer" class="bare-list cards">
-      {{#each photoURLs }}
-      <img src="{{this}}" />
+      {{#each photo }}
+      <li class="card"><img 
+          src="//live.staticflickr.com/{{this.server}}/{{this.id}}_{{this.secret}}.jpg" />
+        {{!-- <button class="btn add btn--cta card__footer">Add goal</button> --}}
+        <div class="card__footer">
+          <a class="card__thumb" href="/myGoals?server={{this.server}}&idApi={{this.id}}&secret={{this.secret}}&title={{this.title}}">
+          <button class="btn add btn--cta ">Add goal</button></a>
+          
+        </div>
+      </li>
       {{/each}}
     </ul>
   </div>
+  <div>
   {{> footer}}
+  </div>
 </main>

@@ -30,19 +30,15 @@ h2,
 h3,
 h4,
 h5,
-h6,
-.alpha,
-.beta,
-.gamma,
-.delta .epsilon,
-.delta {
+h6
+{
   margin: 0 0 0.5em 0;
   padding: 0;
   font-weight: normal;
 }
 
-h1,
-.alpha {
+h1
+ {
   font-size: 3.6em;
   line-height: 1.2;
   color: #192127;
@@ -50,29 +46,29 @@ h1,
 
 @media screen and (min-width: 480px) {
 
-  h1,
-  .alpha {
+  h1
+   {
     font-size: 4em;
   }
 }
 
 @media screen and (min-width: 800px) {
 
-  h1,
-  .alpha {
+  h1
+  {
     font-size: 4.8em;
   }
 }
 
-h2,
-.beta {
+h2
+{
   font-size: 3.6em;
   line-height: 1.2;
   color: #192127;
 }
 
-h3,
-.gamma {
+h3
+{
   font-size: 2.8em;
   line-height: 1.2;
   color: #192127;
@@ -322,7 +318,19 @@ nav ul {
   background-color: hsl(10, 93%, 37%);
   border: 1px solid hsl(10, 93%, 37%);
 }
-
+.button-container {
+  display: flex;
+  
+  
+}
+.button-container a {
+border-right: 1px solid #bbc1c6;
+flex: 1 0 auto;
+text-align: left;
+}
+a .btn--warning{
+  width: 100%;
+}
 /*---------CARDS------------*/
 .cards li {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.14);
@@ -337,8 +345,8 @@ nav ul {
 
 .card img {
   width: 100%;
-  max-height: auto;
-  object-fit: contain;
+  height: auto;
+  
   
 }
 .card__thumb {
@@ -355,21 +363,26 @@ nav ul {
   right: 0;
 }
 
-.card__title {
-  font-size: 2em;
-  color: #fff;
+.ultimate-cards-container {
+  display: flex;
+}
+.ultimate-cards-container .cards-container {
+  width: 50%;
 }
 
-/*.card__title {
+
+
+/* .card__title {
   font-size: 2em;
   color: #fff;
-}*/
-.card__intro span {
+} */
+/*.card__intro span {
   font-size: 1.3em;
-}
-.card__thumb img {
-  width: 100%;
-  display: block;
+}*/
+img .card__thumb {
+  /* width: 100%; */
+  display: inline;
+  background-size: cover;
 }
 .cards::after {
   /*clear of float container*/
@@ -386,26 +399,27 @@ nav ul {
   flex-wrap: wrap; 
   justify-content: center;
 }
+
 /*-----------------------------
  * Card footer w/buttons
  *-----------------------------*/
 .card__footer {
   display: flex;
-  border-top: 1px solid #2c9cf2;
+  /*border-top: 1px solid #bbc1c6;*/
   border-radius: 0;
   justify-content: center;
 }
-/*.card__footer .btn {
+/* .card__footer .btn {
   border: none;
   border-radius: 0;
   text-align: center;
-}*/
+} */
 
-/*.card__footer .btn--like {
+ .card__footer .btn--like {
   border-right: 1px solid #bbc1c6;
   flex: 1 0 auto;
   text-align: left;
-}*/
+}
 
 /*----------FOOTER-----------*/
 .global-footer {
@@ -415,7 +429,7 @@ nav ul {
   bottom: 0;
   width: 100%;
   height: 80px;
-  position: absolute;
+  /* position: absolute; */
 }
 
 

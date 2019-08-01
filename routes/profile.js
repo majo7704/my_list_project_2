@@ -40,11 +40,34 @@ router.get("/myGoals", (req, res, next) => {
 })
 
 router.get("/create", (req, res, next) =>{
-  redirect("create_goal")
+  res.render("create_goal")
+})
+
+router.post("/create", (req, res, next) => {
+  let newGoal = {
+      state: "unfinished",
+      image: req.file.filename,
+      title: req.body.title,
+      description: req.body.description
+  }
+  Goal.create(newGoal)
+  .then((response) => {
+    return User.findByIdAndUpdate(req.session.user._id, {
+          $push: {goals: response._id}
+        }, {new: true})
+  })
+  .then((userResponse) => {
+    debugger
+    res.redirect('/myGoals')
+  })
+  .catch((err) => {
+    next(err)
+  })
 })
 
 router.get('/removedGoal', (req, res, next)=>{
-  if (req.query.state === 'completed') {
+ 
+  if (req.query.state === 'complete') {
   User.findByIdAndUpdate(req.session.user._id, {$pull: {completedGoals: req.query.id}})
   .then(() =>{
     res.redirect("/myGoals")

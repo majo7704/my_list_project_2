@@ -1,18 +1,24 @@
 {{> nav_bar_not_member}}
-<div class="cards-container">
-  
-{{#if user.goals}}
-<h1>Unfinished goals</h1>
-    {{#each user.goals}}
-       {{> goalPartial this}}  
-    {{/each}}
-{{/if}}
-</div>
-<div class="cards-container">
-{{#if user.completedGoals}}
-<h1>Completed goals</h1>
-  {{#each user.completedGoals}}
-  {{> goalPartial this}}
-  {{/each}}
-{{/if}}
+<div class="ultimate-cards-container">
+  <div class="cards-container">
+    
+    {{#if user.goals}}
+    <h1>Unfinished goals</h1>
+    <ul class=" bare-list cards">
+        {{#each user.goals}}
+          {{> goalPartial this}}  
+        {{/each}}
+    </ul>
+    {{/if}}
+  </div>
+  <div class="cards-container">
+    {{#if user.completedGoals}}
+    <h1>Completed goals</h1>
+    <ul class=" bare-list cards">
+      {{#each user.completedGoals}}
+      {{> goalPartial this}}
+      {{/each}}
+      </ul>
+    {{/if}}
+  </div>
 </div>

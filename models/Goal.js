@@ -6,8 +6,11 @@ const goalSchema = new Schema({
   idApi: String,
   secret: String,
   state: String,
-  title: String
+  title: String,
+  description: String,
+  image: String
 });
 const Goal = mongoose.model('goals', goalSchema)
 
 module.exports = Goal;
+

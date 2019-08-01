@@ -4,6 +4,7 @@ const express = require('express');
 const path = require('path');
 const hbs = require('hbs');
 const mongoose = require('mongoose');
+const multer = require('multer');
 require('dotenv').config()
 const config = require('./config/database')
 //const authenticate = require('./routes/oauth')
@@ -49,6 +50,7 @@ hbs.registerHelper('ifunfinished', function (state, options) {
   return options.inverse(this)
 })
 
+let upload = multer({dest: "public/images"})
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded ({
   extended: false
@@ -69,8 +71,8 @@ app.use(function (req, res, next) {
 app.use("/", require('./routes/index'));
 app.use("/", require('./routes/auth-routes'));
 app.use("/", protectRoute, require('./routes/search'));
-app.use("/", protectRoute, require('./routes/profile'));
-app.use("/", require('./routes/profile'));
+app.use("/", protectRoute, upload.single("image"), require('./routes/profile'));
+
 
 
 

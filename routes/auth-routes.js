@@ -27,7 +27,7 @@ router.post('/auth/signup', function(req, res, next){
     User.create(newUser)
     .then((user) => {
       req.session.user = user;
-      res.redirect("/myGoals");
+      res.redirect("/search");
     })
     .catch((err) => {
       res.send("error")
