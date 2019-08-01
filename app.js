@@ -6,7 +6,7 @@ const hbs = require('hbs');
 const mongoose = require('mongoose');
 const multer = require('multer');
 require('dotenv').config()
-const config = require('./config/database')
+
 //const authenticate = require('./routes/oauth')
 //require('./apiconfig/flickr');
 
@@ -29,7 +29,7 @@ app.use(session({
 }))
 // Connection to database "myBucketList"
 // mongoose.Promise = Promise
-mongoose.connect(config.database, {useNewUrlParser: true})
+mongoose.connect(process.env.DB, {useNewUrlParser: true})
     .then(() => {
     console.log('Connected to Mongo');
   }).catch(err => {

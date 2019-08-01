@@ -4,6 +4,7 @@
   "description": "My bucket list  Technologies used: JavaScript, NodeJs/Express Unsolved problems: Approach taken:",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "debug": "nodemon --inspect app.js",
     "dev": "DEBUG=starter-code:* nodemon app.js"

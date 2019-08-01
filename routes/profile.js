@@ -26,7 +26,6 @@ router.get("/myGoals", (req, res, next) => {
     }
     Goal.create(newGoal)
       .then((response) => {
-        
         return User.findByIdAndUpdate(req.session.user._id, { $push: { goals: response._id }}, { new: true })
         .populate("goals")
         .populate("completedGoals")
