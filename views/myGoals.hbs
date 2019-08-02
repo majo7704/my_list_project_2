@@ -1,9 +1,11 @@
 {{> nav_bar_not_member}}
 <div class="ultimate-cards-container">
   <div class="cards-container">
+    
     {{#if user.goals}}
     <p class="myGoals-list">Current goals</p>
     <ul class=" bare-list cards">
+
         {{#each user.goals}}
           {{> goalPartial this}}  
         {{/each}}
@@ -14,6 +16,7 @@
     {{#if user.completedGoals}}
     <p class="myGoals-list">Completed goals</p>
     <ul class=" bare-list cards">
+      
       {{#each user.completedGoals}}
       {{> goalPartial this}}
       {{/each}}
