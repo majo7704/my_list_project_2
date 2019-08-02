@@ -319,17 +319,20 @@ nav ul {
   border: 1px solid hsl(10, 93%, 37%);
 }
 .button-container {
-  display: flex;
-  
-  
+  display: flex;  
 }
 .button-container a {
 border-right: 1px solid #bbc1c6;
+display: flex;
+
 flex: 1 0 auto;
 text-align: left;
 }
 a .btn--warning{
   width: 100%;
+}
+a .btn--cta {
+  flex: 1 0 auto;
 }
 /*---------CARDS------------*/
 .cards li {
@@ -346,22 +349,22 @@ a .btn--warning{
 .card img {
   width: 100%;
   height: auto;
-  
-  
-}
-.card__thumb {
-  position: relative;
-  text-decoration: none;
-  color: #fff;
+  flex: 1 0 10em;
 }
 
-.card__intro {
+.card__thumb .add{
+  text-decoration: none;
+  color: #fff;
+  flex: 1 0 10em;
+}
+
+/* .card__intro {
   padding: 1.6em;
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-}
+} */
 
 .ultimate-cards-container {
   display: flex;
@@ -370,7 +373,10 @@ a .btn--warning{
   width: 50%;
 }
 
-
+/* .card .card__thumb {
+  width: 10vw;
+  height: 20vh;
+} */
 
 /* .card__title {
   font-size: 2em;
@@ -380,8 +386,8 @@ a .btn--warning{
   font-size: 1.3em;
 }*/
 img .card__thumb {
-  /* width: 100%; */
-  display: inline;
+  width: 100%;
+
   background-size: cover;
 }
 .cards::after {
@@ -398,6 +404,7 @@ img .card__thumb {
   flex-direction: row;
   flex-wrap: wrap; 
   justify-content: center;
+  
 }
 
 /*-----------------------------
@@ -409,13 +416,14 @@ img .card__thumb {
   border-radius: 0;
   justify-content: center;
 }
-/* .card__footer .btn {
+.card__footer .btn {
   border: none;
   border-radius: 0;
   text-align: center;
-} */
+  flex: 1 0 10em;
+}
 
- .card__footer .btn--like {
+ .card__footer .btn--warning {
   border-right: 1px solid #bbc1c6;
   flex: 1 0 auto;
   text-align: left;
@@ -495,4 +503,36 @@ img .card__thumb {
   .cards .card {
     width: calc(25% - 1.6rem);
   }
+}
+/* Create goal form */
+.form--inpage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  margin: 0 auto;
+  padding: 10% 10%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.14);
+  border-radius: 3px;
+}
+
+.input-group__field {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+  padding: 10% 10%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.14);
+  border-radius: 3px;
+}
+
+.input-group--horizontal {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 10em;
+}
+.myGoals-list {
+  color: #2c9cf2;
+  text-align: center;
 }

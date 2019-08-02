@@ -2,28 +2,17 @@
 
 <form class="form--inpage" action="/create" method="post" enctype="multipart/form-data">
   <div class="alert--wide">
-    Please fill out a title<br />
-    Please add an image.
-  </div>
-  <div class="input-group input-group--horizontal">
-    <label class="input-group__label" for="title"> Title</label>
-    <input id="goal-title" class="input-group__field" type="text" name="title" placeholder="E.g. ride a camel" />
+    <h2 class="logo" for="search"><em class="footer-logo">My</em>Bucket List Goal</h2>
+    <p>Please add an image.</p>
   </div>
 
   <div class="input-group input-group--horizontal">
-    <label class="input-group__label" for="image"> Image</label>
     <input id="goal-image" class="input-group__field" type="file" name="image" />
   </div>
 
-  <div class="input-group input-group--horizontal">
-    <label class="input-group__label" for="goal-description"> Description</label>
-    <textarea id="goal-description" class="input-group__field" type="text" name="goal-descrption" rows="8" cols="25">
-    </textarea>
-  </div>
 
   <div <class="prompt">
-    <a class="prompt__cancel" href="#">Cancel</a>
-    <button class="btn btn--primary prompt__confirm" type="submit">Create Goal</button>
+    <button class="btn btn--cta btn--primary prompt__confirm" type="submit">Create Goal</button>
 
   </div>
 
