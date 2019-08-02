@@ -4,7 +4,8 @@
     {{#each photo }}
       <li class="card"><img class="card__thumb" src="//live.staticflickr.com/{{this.server}}/{{this.id}}_{{this.secret}}.jpg" />
         {{!-- <button class="btn add btn--cta card__footer">Add goal</button> --}}
-        <a href="/myGoals?server={{this.server}}&idApi={{this.id}}&secret={{this.secret}}&title={{this.title}}"><button class="btn add btn--cta card__footer">Add goal</button></a>
+        <a href="/myGoals?server={{this.server}}&idApi={{this.id}}&secret={{this.secret}}&title={{this.title}}"><button class="btn add btn--cta card__footer"><svg class="icon" height="18" viewbox="0 0 24 24" width="18" role="presentation">
+          <use xlink:href="#add"></use>Add goal</button></a>
       </li>
     {{/each}}
   </ul>
