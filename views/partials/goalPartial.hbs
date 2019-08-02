@@ -4,13 +4,11 @@
   {{#if image}}
   <img class="card__thumb" src="images/{{image}}" />
   {{else}}
- 
   <img class="card__thumb" src="//live.staticflickr.com/{{server}}/{{idApi}}_{{secret}}.jpg" />
-  
   {{/if}}
   {{!-- <form class='card__footer'> --}}
     <div class= "button-container">
-  <a href="/removedGoal?id={{_id}}&state={{state}}"><button class="btn btn--warning">Remove</button></a>
+  <a href="/removedGoal?id={{_id}}&state={{state}}"><button class="btn btn--warning">-</button></a>
   {{#ifunfinished state}}
   <a href="/completedGoal?id={{_id}}"><button class="btn btn--warning">Complete</button></a>
   {{/ifunfinished}}
